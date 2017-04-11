@@ -110,22 +110,13 @@
 <body>
 <div class="container">
 	<button>Toggle Widths</button>
-	<p class="one">The tester below uses CSS attribute selectors to adjust <strong>border-radius</strong> and <strong>background-color</strong>, as well as a callback to update dimensions in the next sentence.<br />Tester is <span class="wide"></span>px wide and <span class="tall"></span>px tall.</p>
+	<p class="one">The tester below uses CSS attribute selectors to adjust <strong>border-radius</strong> and <strong>background-color</strong>, as well as a callback to update dimensions in the next&nbsp;sentence.<br />Tester is <span class="wide"></span>px wide and <span class="tall"></span>px tall.</p>
 	<div class="tester"></div>
-	<p class="two">The tester below uses a standalone <strong>elementResize</strong> event to update dimensions in the next sentence, but does not set attributes for CSS.<br />Tester is <span class="wide"></span>px wide and <span class="tall"></span>px tall.</p>
-	<div class="tester2"></div>
 </div>
 <script>
 $(document).ready(function() {
 	$('button').on('click',function() {
 		$('.tester').toggleClass('wide tall');
-		$('.tester2').toggleClass('wide tall');
-	});
-
-	$('.tester2').on('elementResize', function(dims) {
-		var $el = $(this);
-		$('p.two span.wide').text(dims.width);
-		$('p.two span.tall').text(dims.height);
 	});
 
 	var breakpoints = ['min-width: 300','max-width: 299','max-height:249px','min-height: 250'];
